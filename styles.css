@@ -891,7 +891,6 @@ a  { color: inherit; text-decoration: none; }
     justify-content: flex-start;
     text-align: left;
   }
-}
   .why__grid { grid-template-columns: 1fr; }
   .about__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
