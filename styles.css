@@ -868,8 +868,8 @@ a  { color: inherit; text-decoration: none; }
     position: fixed;
     inset: 0;
     background: var(--cream);
-    padding: 80px clamp(28px, 6vw, 48px) clamp(24px, 5vw, 48px);
-    z-index: 99;
+    padding: 90px 40px 48px;
+    z-index: 999;
     overflow: hidden;
     animation: mobileMenuIn .35s cubic-bezier(.2,.7,.2,1);
   }
@@ -881,7 +881,7 @@ a  { color: inherit; text-decoration: none; }
   .nav__burger {
     display: flex;
     position: relative;
-    z-index: 101;
+    z-index: 1001;
   }
   /* Burger → X animation */
   .nav__burger span {
@@ -955,7 +955,7 @@ a  { color: inherit; text-decoration: none; }
     text-align: left;
     font-family: var(--font-display);
     font-weight: 400;
-    font-size: clamp(22px, 5vw, 30px);
+    font-size: clamp(28px, 7vw, 40px);
     letter-spacing: -.01em;
     color: var(--ink);
     border-radius: 0;
