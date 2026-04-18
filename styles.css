@@ -860,6 +860,13 @@ a  { color: inherit; text-decoration: none; }
 
   /* Mobile menu — full-screen takeover */
   .nav__links { display: none; }
+  /* Remove backdrop-filter when open — it creates a containing block
+     that traps fixed-position children within the 80px nav height */
+  .nav.open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    overflow: visible;
+  }
   .nav.open .nav__links {
     display: flex;
     flex-direction: column;
