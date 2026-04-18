@@ -66,7 +66,7 @@
   </div>
   <div class="footer__bottom">
     <div class="container">
-      <span>© <span id="yr"></span> Peach Parking Solutions. Powered and secured by Pointr Media.</span>
+      <span>© <span id="yr"></span> Peach Parking Solutions.</span>
     </div>
   </div>
 </footer>`;
