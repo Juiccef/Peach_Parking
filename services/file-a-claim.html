@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>File a Claim | Peach Parking Solutions</title>
+<meta name="description" content="Submit an incident or damage claim for your vehicle parked with Peach Parking Solutions in Atlanta, GA." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="page-hero__bg"><img src="../images/564197258_17984397227901593_8856493365108087074_n.jpg" alt="" /></div>
+  <div class="container page-hero__inner">
+    <p class="page-hero__crumb"><a href="../index.html">Home</a> &nbsp;·&nbsp; Contact &nbsp;·&nbsp; File a Claim</p>
+    <h1 class="page-hero__title">File a <em>Claim</em></h1>
+    <p class="page-hero__sub">Report an incident or damage that occurred while your vehicle was in our care. We take every claim seriously and will follow up within 48 hours.</p>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <div class="contact__grid">
+
+      <div class="contact__info reveal">
+        <span class="section-head__eyebrow">Claim Process</span>
+        <h2>We'll make it<br/><em>right.</em></h2>
+        <p>Peach Parking Solutions is fully insured. If something happened while we had your keys, fill out the form with as much detail as you can and our operations lead will contact you directly.</p>
+        <p>For urgent issues, please also call the location where the service was performed.</p>
+        <address class="contact__address">
+          <p>P.O. Box 620767<br/>Atlanta, GA 30362</p>
+        </address>
+      </div>
+
+      <form class="contact__form reveal" onsubmit="handleSubmit(event)">
+        <div class="field">
+          <label for="claim-name">Name</label>
+          <input id="claim-name" type="text" required placeholder="Your full name" />
+        </div>
+        <div class="field">
+          <label for="claim-email">Email</label>
+          <input id="claim-email" type="email" required placeholder="your@email.com" />
+        </div>
+        <div class="field">
+          <label for="claim-phone">Phone <span class="field__optional">(optional)</span></label>
+          <input id="claim-phone" type="tel" placeholder="(404) 555-0100" />
+        </div>
+        <div class="field">
+          <label for="claim-date">Date of Incident</label>
+          <input id="claim-date" type="date" required />
+        </div>
+        <div class="field">
+          <label for="claim-location">Location (venue or address)</label>
+          <input id="claim-location" type="text" required placeholder="Restaurant, venue, or property name" />
+        </div>
+        <div class="field">
+          <label for="claim-vehicle">Vehicle Make &amp; Model</label>
+          <input id="claim-vehicle" type="text" required placeholder="e.g. 2021 Honda Accord" />
+        </div>
+        <div class="field">
+          <label for="claim-plate">License Plate <span class="field__optional">(optional)</span></label>
+          <input id="claim-plate" type="text" placeholder="ABC-1234" />
+        </div>
+        <div class="field">
+          <label for="claim-details">Describe what happened</label>
+          <textarea id="claim-details" rows="5" required placeholder="Please include as much detail as possible — time of incident, where the damage occurred, and the nature of the issue."></textarea>
+        </div>
+        <div class="field">
+          <label for="claim-photos">Photos</label>
+          <label class="file-drop" id="claim-photos-label">
+            <input id="claim-photos" type="file" accept="image/*" multiple required />
+            <span class="file-drop__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </span>
+            <span class="file-drop__text">Drag &amp; drop photos here, or <u>browse</u></span>
+            <span class="file-drop__hint">JPG, PNG, HEIC — up to 5 files</span>
+            <span class="file-drop__names" id="claim-photos-names"></span>
+          </label>
+        </div>
+        <button class="btn btn--peach btn--lg" type="submit">Submit Claim</button>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h2>Not a claim? <em>Get in touch.</em></h2>
+    <p>For general inquiries, quotes, or booking, reach us through our main contact form.</p>
+    <div class="cta-strip__actions">
+      <a href="../index.html#contact" class="btn btn--peach btn--lg">Contact Us</a>
+      <a href="../index.html#services" class="btn btn--ghost-light">See Our Services</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../partials.js" defer></script>
+<script>
+(function () {
+  const input = document.getElementById('claim-photos');
+  const label = document.getElementById('claim-photos-label');
+  const names = document.getElementById('claim-photos-names');
+
+  function showNames(files) {
+    if (!files.length) { names.textContent = ''; return; }
+    names.textContent = Array.from(files).map(f => f.name).join(', ');
+  }
+
+  input.addEventListener('change', () => showNames(input.files));
+
+  label.addEventListener('dragover', e => { e.preventDefault(); label.classList.add('drag-over'); });
+  label.addEventListener('dragleave', () => label.classList.remove('drag-over'));
+  label.addEventListener('drop', e => {
+    e.preventDefault();
+    label.classList.remove('drag-over');
+    const dt = new DataTransfer();
+    Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/')).slice(0, 5).forEach(f => dt.items.add(f));
+    input.files = dt.files;
+    showNames(input.files);
+  });
+})();
+</script>
+</body>
+</html>
