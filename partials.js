@@ -21,11 +21,7 @@
 <div class="grain" aria-hidden="true"></div>
 <header class="nav">
   <a class="nav__brand" href="${pfx}index.html" aria-label="Peach Parking Solutions home">
-    <img src="${pfx}images/img7.png" class="nav__logo" alt="" />
-    <div class="nav__brand-text">
-      <span class="nav__brand-name">Peach Parking Solutions</span>
-      <span class="nav__brand-sub">Atlanta, GA</span>
-    </div>
+    <img src="${pfx}logos/Final Logo Package-08.png" class="nav__logo" alt="Peach Parking Solutions" />
   </a>
   <nav class="nav__links" aria-label="Main navigation">
     <a href="${pfx}index.html"${activePage==='home'?' class="is-active"':''}>Home</a>
@@ -61,8 +57,7 @@
 <footer class="footer">
   <div class="container footer__inner">
     <div class="footer__brand">
-      <img src="${pfx}images/img7.png" alt="Peach Parking Solutions logo" class="footer__logo" />
-      <span class="footer__name">Peach Parking Solutions</span>
+      <img src="${pfx}logos/c3bfed_9ffd1bab52ba44f88a69654c56d625dd~mv2.avif" alt="Peach Parking Solutions logo" class="footer__logo" />
     </div>
     <nav class="footer__nav" aria-label="Footer navigation">
       <a href="${pfx}index.html">Home</a>
@@ -142,6 +137,18 @@
       trigger.setAttribute('aria-expanded', open);
     }
   });
+
+  // Navbar scroll shrink — always solid on non-home pages
+  const navEl = document.querySelector('.nav');
+  if (navEl) {
+    if (activePage !== 'home') {
+      navEl.classList.add('scrolled');
+    } else {
+      const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  }
 
   // Testimonials switcher
   document.querySelectorAll('.testimonials').forEach(section => {

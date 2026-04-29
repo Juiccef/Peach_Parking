@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open *)",
+      "Bash(sips *)",
+      "Bash(curl -s *)",
+      "Bash(npm run lint)",
+      "Bash(npm run typecheck)"
+    ]
+  }
+}
