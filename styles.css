@@ -126,7 +126,6 @@ a  { color: inherit; text-decoration: none; }
 .nav__links a {
   padding: 8px 16px; border-radius: 6px;
   font-size: 18px; font-weight: 600; color: #fff;
-  text-shadow: 0 1px 8px rgba(0,0,0,.45);
   transition: background .2s, color .2s, font-size .35s ease;
 }
 .nav__links a:hover { background: rgba(255,255,255,.12); color: #fff; }
@@ -155,7 +154,7 @@ a  { color: inherit; text-decoration: none; }
   display: inline-flex; align-items: center; gap: 4px;
   padding: 8px 16px; border-radius: 6px;
   font-family: var(--font-body); font-size: 18px; font-weight: 600;
-  color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.45); background: none; border: none; cursor: pointer;
+  color: #fff; background: none; border: none; cursor: pointer;
   transition: background .2s, color .2s, font-size .35s ease;
 }
 .nav__dropdown-trigger:hover,
@@ -179,7 +178,7 @@ a  { color: inherit; text-decoration: none; }
   background: var(--cream);
   border: 1px solid var(--rule);
   border-radius: var(--r);
-  box-shadow: 0 8px 32px rgba(0,0,0,.1);
+  box-shadow: none;
   list-style: none; padding: 6px 0;
   opacity: 0; pointer-events: none;
   transform: translateY(-8px);
@@ -993,6 +992,10 @@ a  { color: inherit; text-decoration: none; }
   }
   .nav__logo {
     width: 200px; height: 80px;
+    margin-block: 0;
+  }
+  .nav.scrolled .nav__logo {
+    width: 180px; height: 72px;
     margin-block: 0;
   }
 
