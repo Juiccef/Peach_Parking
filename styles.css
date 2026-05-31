@@ -228,7 +228,7 @@ a  { color: inherit; text-decoration: none; }
   position: absolute; inset: 0;
 }
 .hero__bg img {
-  width: 100%; height: 100%; object-fit: cover;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 70%;
   animation: heroZoom 14s ease-out forwards;
 }
 @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
@@ -236,9 +236,9 @@ a  { color: inherit; text-decoration: none; }
   position: absolute; inset: 0;
   background: linear-gradient(
     105deg,
-    rgba(10,10,10,.72) 0%,
-    rgba(10,10,10,.45) 60%,
-    rgba(10,10,10,.18) 100%
+    rgba(10,10,10,.52) 0%,
+    rgba(10,10,10,.28) 60%,
+    rgba(10,10,10,.08) 100%
   );
 }
 .hero__content {
@@ -286,23 +286,36 @@ a  { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 .partners__logos {
-  display: flex; align-items: center; justify-content: space-evenly;
-  width: 100%; gap: 32px;
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; gap: 28px 40px;
+  flex-wrap: wrap;
 }
 .partners__logo-wrap {
   display: flex; align-items: center; justify-content: center;
   opacity: .85; transition: opacity .2s;
-  flex: 1; max-width: 220px;
+  flex: 0 0 auto;
 }
 .partners__logo-wrap:hover { opacity: 1; }
 .partners__logo-wrap img {
-  height: 44px; width: auto; display: block;
+  height: 68px; width: auto; display: block;
 }
 .partners__logo-wrap img[alt="Block & Drum"] {
-  height: 56px;
+  height: 84px;
 }
 .partners__logo-wrap img[alt="The 1904 on Piedmont Park"] {
   filter: invert(1);
+}
+.partners__logo-wrap img[alt="Tabla"] {
+  height: 96px;
+}
+.partners__logo-wrap img[alt="Emory University"] {
+  height: 60px;
+}
+.partners__logo-wrap img[alt="Terminus Commercial Real Estate Partners"] {
+  height: 76px;
+}
+.partners__logo-wrap img[alt="The Real Housewives of Atlanta"] {
+  height: 68px;
 }
 
 /* ── PEACH ACRONYM ── */
@@ -423,7 +436,7 @@ a  { color: inherit; text-decoration: none; }
 
 /* ── PHOTO COLLAGE ── */
 .collage {
-  padding: clamp(64px, 8vw, 120px) 0;
+  padding: clamp(64px, 8vw, 120px) 0 0;
   background: var(--cream);
 }
 .collage__head {
@@ -441,7 +454,7 @@ a  { color: inherit; text-decoration: none; }
 .collage__grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, clamp(200px, 20vw, 300px));
+  grid-template-rows: repeat(2, clamp(200px, 20vw, 300px)) clamp(240px, 25vw, 380px);
   gap: 0;
   padding: 0;
 }
@@ -463,6 +476,12 @@ a  { color: inherit; text-decoration: none; }
   opacity: 0; transform: scale(1.06);
   transition: opacity 1s ease, transform 1.4s cubic-bezier(.2,.7,.2,1);
 }
+/* Per-cell framing */
+.collage__item--a img { object-position: center 60%; }
+.collage__item--c img { object-position: center 20%; }
+.collage__item--d img { object-position: center 40%; }
+.collage__item--e img { object-position: center 60%; }
+.collage__item--f img { object-position: center 30%; }
 .collage__item img.img-in { opacity: 1; transform: scale(1); }
 .collage__item:hover img { transform: scale(1.04); }
 
@@ -696,6 +715,7 @@ a  { color: inherit; text-decoration: none; }
   width: 100%; aspect-ratio: 4/5; object-fit: cover;
   border-radius: var(--r);
   opacity: 0; transform: scale(1.04);
+  filter: brightness(1.18);
   transition: opacity 1s ease, transform 1.3s cubic-bezier(.2,.7,.2,1);
 }
 .about__media img.img-in { opacity: 1; transform: scale(1); }
@@ -721,6 +741,52 @@ a  { color: inherit; text-decoration: none; }
 .about__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
 
 /* ── STAY IN TOUCH ── */
+/* ── AS FEATURED ON ── */
+.featured-on {
+  padding: clamp(64px, 8vw, 100px) 0;
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+}
+.featured-on__inner {
+  max-width: 1000px; margin-inline: auto;
+}
+.featured-on .section-head__eyebrow {
+  color: var(--peach);
+}
+.featured-on__show-logo {
+  display: block; margin: 20px auto 32px;
+  height: 160px; width: auto;
+}
+.featured-on__desc {
+  font-size: clamp(15px, 1.6vw, 18px); line-height: 1.7;
+  color: rgba(255,255,255,.75); max-width: 58ch; margin: 0 auto 40px;
+}
+.featured-on__desc em { font-style: italic; color: #fff; }
+.featured-on__stills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.featured-on__still {
+  margin: 0; overflow: hidden; border-radius: 10px;
+  aspect-ratio: 16/10;
+}
+.featured-on__still img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 90%;
+  transition: transform .4s ease;
+}
+.featured-on__still--wide img { object-position: center 90%; }
+.featured-on__still:hover img { transform: scale(1.04); }
+
+@media (max-width: 600px) {
+  .featured-on__stills { grid-template-columns: 1fr; }
+  .featured-on__show-logo { height: 56px; }
+}
+
 .stay {
   padding: clamp(64px, 8vw, 120px) 0;
   background: var(--cream);
@@ -895,14 +961,14 @@ a  { color: inherit; text-decoration: none; }
 }
 .page-hero__bg {
   position: absolute; inset: 0;
-  opacity: .35;
+  opacity: .6;
 }
 .page-hero__bg img {
   width: 100%; height: 100%; object-fit: cover;
 }
 .page-hero__bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(26,26,26,.5) 0%, var(--ink) 95%);
+  background: linear-gradient(180deg, rgba(26,26,26,.25) 0%, var(--ink) 95%);
 }
 .page-hero__inner { position: relative; z-index: 2; text-align: center; }
 .page-hero__crumb {
@@ -1131,22 +1197,24 @@ a  { color: inherit; text-decoration: none; }
   .feature-list { grid-template-columns: 1fr; }
   .stay__cta-row { flex-direction: column; align-items: stretch; }
 
-  /* Partner logos: 3 top row, 2 bottom row centered */
+  /* Partner logos: 3x3 grid */
   .partners__logos {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 20px 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 16px;
     justify-items: center;
     align-items: center;
   }
   .partners__logo-wrap {
-    grid-column: span 2;
     max-width: none;
     width: 100%;
     justify-content: center;
   }
-  .partners__logo-wrap:nth-child(4) { grid-column: 2 / 4; }
-  .partners__logo-wrap:nth-child(5) { grid-column: 4 / 6; }
+  .partners__logo-wrap img { height: 36px; }
+  .partners__logo-wrap img[alt="Block & Drum"] { height: 44px; }
+  .partners__logo-wrap img[alt="Tabla"] { height: 50px; }
+  .partners__logo-wrap img[alt="Emory University"] { height: 32px; }
+  .partners__logo-wrap img[alt="Terminus Commercial Real Estate Partners"] { height: 40px; }
 }
 
 @media (max-width: 600px) {
