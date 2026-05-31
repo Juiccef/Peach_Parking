@@ -313,6 +313,7 @@ a  { color: inherit; text-decoration: none; }
 }
 .partners__logo-wrap img[alt="Terminus Commercial Real Estate Partners"] {
   height: 76px;
+  mix-blend-mode: multiply;
 }
 .partners__logo-wrap img[alt="The Real Housewives of Atlanta"] {
   height: 68px;
