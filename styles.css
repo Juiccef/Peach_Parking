@@ -228,7 +228,7 @@ a  { color: inherit; text-decoration: none; }
   position: absolute; inset: 0;
 }
 .hero__bg img {
-  width: 100%; height: 100%; object-fit: cover; object-position: 68% 70%;
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%;
   animation: heroZoom 14s ease-out forwards;
 }
 /* Desktop: reveal more above the team so heads aren't cut off */
