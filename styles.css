@@ -514,7 +514,7 @@ a  { color: inherit; text-decoration: none; }
   }
   .collage__grid {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 68vw 28vw 28vw 34vw;
+    grid-template-rows: 68vw 28vw 28vw 48vw;
     gap: 0;
     padding: 0;
   }
