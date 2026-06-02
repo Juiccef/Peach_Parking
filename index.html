@@ -6,11 +6,23 @@
 <title>Peach Parking Solutions | Valet in Atlanta, GA</title>
 <meta name="description" content="Peach Parking Solutions provides efficient valet parking operations, parking management, event parking, and lot maintenance across Atlanta, GA." />
 
+<!-- Open Graph / link preview cover -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Peach Parking Solutions | Valet in Atlanta, GA" />
+<meta property="og:description" content="Premium valet and parking management across Atlanta. Professional, reliable, and built on southern hospitality." />
+<meta property="og:image" content="images/og/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="798" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Peach Parking Solutions | Valet in Atlanta, GA" />
+<meta name="twitter:description" content="Premium valet and parking management across Atlanta. Professional, reliable, and built on southern hospitality." />
+<meta name="twitter:image" content="images/og/og-cover.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="images/img6.png">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 <div id="site-nav"></div>
@@ -18,7 +30,7 @@
 <!-- ── HERO ── -->
 <section id="home" class="hero">
   <div class="hero__bg">
-    <img src="images/hero-event.jpg" alt="Peach Parking Solutions valets on duty" />
+    <img src="images/hero/hero-event.jpg" alt="Peach Parking Solutions valets on duty" />
     <div class="hero__overlay"></div>
   </div>
   <div class="hero__content">
@@ -36,8 +48,23 @@
   <div class="container partners__inner">
     <span class="partners__label">Trusted by Atlanta's best</span>
     <div class="partners__logos">
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="Real Housewives of Atlanta — partner">
-        <img src="logos/rhoa-trimmed.png" alt="The Real Housewives of Atlanta" />
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Block and Drum — partner">
+        <img src="logos/block-drum-trimmed.png" alt="Block &amp; Drum" />
+      </a>
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Pasta da Pulcinella — partner">
+        <img src="logos/pulcinella-trimmed.png" alt="Pasta da Pulcinella" />
+      </a>
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Layaly — partner">
+        <img src="logos/layaly-trimmed.png" alt="Layaly Mediterranean Restaurant" />
+      </a>
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Tabla — partner">
+        <img src="logos/tabla-trimmed.png" alt="Tabla" />
+      </a>
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Lucian Books and Wine — partner">
+        <img src="logos/lucian-trimmed.png" alt="Lucian Books and Wine" />
+      </a>
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="The 1904 on Piedmont Park — partner">
+        <img src="logos/the1904-trimmed.png" alt="The 1904 on Piedmont Park" />
       </a>
       <a class="partners__logo-wrap" href="#testimonials" aria-label="Terminus Commercial — partner">
         <img src="logos/terminus-trimmed.png" alt="Terminus Commercial Real Estate Partners" />
@@ -45,23 +72,13 @@
       <a class="partners__logo-wrap" href="#testimonials" aria-label="Emory University — partner">
         <img src="logos/emory-trimmed.png" alt="Emory University" />
       </a>
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="Tabla — partner">
-        <img src="logos/tabla-trimmed.png" alt="Tabla" />
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Real Housewives of Atlanta — partner">
+        <img src="logos/rhoa-trimmed.png" alt="The Real Housewives of Atlanta" />
       </a>
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="Pasta da Pulcinella — partner">
-        <img src="logos/pulcinella-trimmed.png" alt="Pasta da Pulcinella" />
-      </a>
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="The 1904 on Piedmont Park — partner">
-        <img src="logos/the1904-trimmed.png" alt="The 1904 on Piedmont Park" />
-      </a>
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="Lucian Books and Wine — partner">
-        <img src="logos/lucian-trimmed.png" alt="Lucian Books and Wine" />
-      </a>
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="Layaly — partner">
-        <img src="logos/layaly-trimmed.png" alt="Layaly Mediterranean Restaurant" />
-      </a>
-      <a class="partners__logo-wrap" href="#testimonials" aria-label="Block and Drum — partner">
-        <img src="logos/block-drum-trimmed.png" alt="Block &amp; Drum" />
+    </div>
+    <div class="partners__cortland">
+      <a class="partners__logo-wrap" href="#testimonials" aria-label="Cortland at Buckhead Village — partner">
+        <img src="logos/cortland-trimmed.png" alt="Cortland at Buckhead Village" />
       </a>
     </div>
   </div>
@@ -81,7 +98,7 @@
         <span class="service-col__eyebrow">for restaurants &amp; hotels</span>
         <h3 class="service-col__title">Valet Service</h3>
         <span class="service-col__rule" aria-hidden="true"></span>
-        <p class="service-col__desc">Full-service valet parking operations for restaurants, hotels, and private venues. Our uniformed valets are trained to make every arrival seamless — from greeting guests with a smile to returning their vehicle with care.</p>
+        <div class="service-col__media"><img src="images/service-cards/valet-action.jpg" alt="Peach Parking valet opening a guest's car door" loading="lazy" style="object-position: 78% center;" /></div>
         <a href="services/valet-service.html" class="service-col__link">Learn More</a>
       </li>
 
@@ -89,7 +106,7 @@
         <span class="service-col__eyebrow">for properties</span>
         <h3 class="service-col__title">Parking Management</h3>
         <span class="service-col__rule" aria-hidden="true"></span>
-        <p class="service-col__desc">Turn your office building, retail property, or surface lot into a revenue-generating asset. We partner with property owners to provide professional solutions that maximize efficiency and keep your lot running smoothly.</p>
+        <div class="service-col__media"><img src="images/service-cards/parking-management.jpg" alt="Red Porsche parked outside Grana" loading="lazy" /></div>
         <a href="services/parking-management.html" class="service-col__link">Learn More</a>
       </li>
 
@@ -97,7 +114,7 @@
         <span class="service-col__eyebrow">for events</span>
         <h3 class="service-col__title">Private Event Parking</h3>
         <span class="service-col__rule" aria-hidden="true"></span>
-        <p class="service-col__desc">From intimate house gatherings to large wedding ceremonies, we coordinate traffic flow, signage, and staffing so that parking is the last thing you or your guests have to think about.</p>
+        <div class="service-col__media"><img src="images/service-cards/event.jpg" alt="Peach Parking team at a private estate event" loading="lazy" /></div>
         <a href="services/event-parking.html" class="service-col__link">Learn More</a>
       </li>
 
@@ -116,32 +133,32 @@
     <div class="testimonials__stage reveal">
       <div class="testimonials__quotes">
         <blockquote class="testimonials__quote is-active" data-idx="0">
-          <p>"Peach Parking has been an exceptional partner for our events at The 1904. Their team handles every arrival with professionalism and grace — our guests consistently remark on the seamless experience."</p>
+          <p>"Reliable, friendly, and always on time. Peach Parking has become a trusted extension of our hospitality team. Our regulars know them by name."</p>
         </blockquote>
         <blockquote class="testimonials__quote" data-idx="1">
-          <p>"Bennett and Corey have been great to work with and always handle any issues quickly. Highly recommend their services to any business looking for a dependable valet partner."</p>
+          <p>"Peach Parking has been an exceptional partner for our events at The 1904. Their team handles every arrival with professionalism and grace. Our guests consistently remark on the seamless experience."</p>
         </blockquote>
         <blockquote class="testimonials__quote" data-idx="2">
-          <p>"Reliable, friendly, and always on time. Peach Parking has become a trusted extension of our hospitality team — our regulars know them by name."</p>
+          <p>"Bennett and Corey have been great to work with and always handle any issues quickly. Highly recommend their services to any business looking for a dependable valet partner."</p>
         </blockquote>
         <blockquote class="testimonials__quote" data-idx="3">
           <p>"From busy weekend rushes to quiet weeknights, the team handles every arrival with the same consistency and care. Guests comment on it constantly."</p>
         </blockquote>
         <blockquote class="testimonials__quote" data-idx="4">
-          <p>"Peach Parking brings a level of polish that matches everything we do at Lucian. Our guests arrive relaxed and ready — and that sets the whole evening's tone."</p>
+          <p>"Peach Parking brings a level of polish that matches everything we do at Lucian. Our guests arrive relaxed and ready, and that sets the whole evening's tone."</p>
         </blockquote>
       </div>
 
       <div class="testimonials__author-row">
         <div class="testimonials__avatars" role="tablist" aria-label="Select testimonial">
-          <button class="t-avatar is-active" data-idx="0" aria-label="The 1904 on Piedmont Park" aria-selected="true">
+          <button class="t-avatar is-active" data-idx="0" aria-label="Block and Drum" aria-selected="true">
+            <img src="logos/block-drum-trimmed.png" alt="Block &amp; Drum" />
+          </button>
+          <button class="t-avatar" data-idx="1" aria-label="The 1904 on Piedmont Park" aria-selected="false">
             <img src="logos/the1904-trimmed.png" alt="The 1904 on Piedmont Park" class="avatar-invert" />
           </button>
-          <button class="t-avatar" data-idx="1" aria-label="Layaly" aria-selected="false">
+          <button class="t-avatar" data-idx="2" aria-label="Layaly" aria-selected="false">
             <img src="logos/layaly-trimmed.png" alt="Layaly Mediterranean Restaurant" />
-          </button>
-          <button class="t-avatar" data-idx="2" aria-label="Block and Drum" aria-selected="false">
-            <img src="logos/block-drum-trimmed.png" alt="Block &amp; Drum" />
           </button>
           <button class="t-avatar" data-idx="3" aria-label="Pasta da Pulcinella" aria-selected="false">
             <img src="logos/pulcinella-trimmed.png" alt="Pasta da Pulcinella" />
@@ -153,16 +170,16 @@
         <div class="testimonials__divider" aria-hidden="true"></div>
         <div class="testimonials__authors">
           <div class="t-author is-active" data-idx="0">
-            <span class="t-author__name">The 1904</span>
+            <span class="t-author__name">Block &amp; Drum</span>
             <span class="t-author__role">Hospitality Partner</span>
           </div>
           <div class="t-author" data-idx="1">
-            <span class="t-author__name">Paul Jaraysi</span>
-            <span class="t-author__role">Owner, Layaly Mediterranean Restaurant</span>
+            <span class="t-author__name">The 1904</span>
+            <span class="t-author__role">Hospitality Partner</span>
           </div>
           <div class="t-author" data-idx="2">
-            <span class="t-author__name">Block &amp; Drum</span>
-            <span class="t-author__role">Hospitality Partner</span>
+            <span class="t-author__name">Paul Jaraysi</span>
+            <span class="t-author__role">Owner, Layaly Mediterranean Restaurant</span>
           </div>
           <div class="t-author" data-idx="3">
             <span class="t-author__name">Pasta da Pulcinella</span>
@@ -181,7 +198,7 @@
 <!-- ── PRIVATE EVENTS SPOTLIGHT ── -->
 <section id="private-events" class="spotlight">
   <div class="spotlight__media reveal">
-    <img src="images/563940508_17984397209901593_5547195220270282053_n.jpg" alt="Peach Parking team at a private residence event" loading="lazy" />
+    <img src="images/collage/563940508_17984397209901593_5547195220270282053_n.jpg" alt="Peach Parking team at a private residence event" loading="lazy" />
     <div class="spotlight__media-overlay" aria-hidden="true"></div>
   </div>
   <div class="container spotlight__inner">
@@ -215,22 +232,22 @@
 
   <div class="collage__grid">
     <figure class="collage__item collage__item--a reveal" style="--i:0">
-      <img src="images/478460128_17957209052901593_8044675220353310671_n.jpg" alt="Peach Parking team outside Grana restaurant" loading="lazy" />
+      <img src="images/collage/maybach.jpg" alt="Luxury Maybach valet-parked at a private estate" loading="lazy" />
     </figure>
     <figure class="collage__item collage__item--b reveal" style="--i:1">
-      <img src="images/img1.png" alt="Valet handing keys to guest" loading="lazy" />
+      <img src="images/collage/img1.png" alt="Valet handing keys to guest" loading="lazy" />
     </figure>
     <figure class="collage__item collage__item--c reveal" style="--i:2">
-      <img src="images/event-photo-8668.jpg" alt="Peach Parking valets on duty at a venue" loading="lazy" />
+      <img src="images/collage/event-photo-8668.jpg" alt="Peach Parking valets on duty at a venue" loading="lazy" />
     </figure>
     <figure class="collage__item collage__item--d reveal" style="--i:3">
-      <img src="images/event-photo-7953.jpg" alt="Valet handing keys to a guest" loading="lazy" />
+      <img src="images/collage/event-photo-7953.jpg" alt="Valet handing keys to a guest" loading="lazy" />
     </figure>
     <figure class="collage__item collage__item--e reveal" style="--i:4">
-      <img src="images/564104322_17984397200901593_4863250897484401328_n.jpg" alt="Peach Parking team at a red-carpet event" loading="lazy" />
+      <img src="images/collage/564104322_17984397200901593_4863250897484401328_n.jpg" alt="Peach Parking team at a red-carpet event" loading="lazy" />
     </figure>
     <figure class="collage__item collage__item--f reveal" style="--i:5">
-      <img src="images/dsc-event-03.jpg" alt="Peach Parking valet at The 1904 on Piedmont Park" loading="lazy" />
+      <img src="images/collage/event-9402.jpg" alt="Emory Private Event Valet Parking sign" loading="lazy" />
     </figure>
   </div>
 </section>
@@ -240,7 +257,13 @@
   <div class="container">
     <div class="about__grid">
       <div class="about__media reveal">
-        <img src="images/hero-event.jpg" alt="Peach Parking Solutions team at a private estate" loading="lazy" />
+        <a class="about__ig" href="https://www.instagram.com/p/DPuRfWAEYaF/?hl=en&img_index=1" target="_blank" rel="noopener" aria-label="View our feature on Instagram">
+          <img src="images/hero/hero-event.jpg" alt="Peach Parking Solutions team at a private estate" loading="lazy" />
+          <span class="about__ig-badge">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            <span>View on Instagram</span>
+          </span>
+        </a>
       </div>
       <div class="about__copy reveal">
         <span class="section-head__eyebrow">About Us · Established 2022</span>
@@ -308,10 +331,10 @@
     <p class="featured-on__desc reveal">Peach Parking Solutions was featured on Season 17 of <em>The Real Housewives of Atlanta</em> — trusted to manage valet at one of the season's most iconic events.</p>
     <div class="featured-on__stills reveal">
       <figure class="featured-on__still featured-on__still--wide">
-        <img src="images/rhoa-still-01.jpg" alt="Peach Parking valet on Real Housewives of Atlanta" loading="lazy" />
+        <img src="images/rhoa/rhoa-still-01.jpg" alt="Peach Parking valet on Real Housewives of Atlanta" loading="lazy" />
       </figure>
       <figure class="featured-on__still">
-        <img src="images/rhoa-still-03.jpg" alt="Peach Parking valet at RHOA event" loading="lazy" />
+        <img src="images/rhoa/rhoa-still-03.jpg" alt="Peach Parking valet at RHOA event" loading="lazy" />
       </figure>
     </div>
   </div>
@@ -369,6 +392,6 @@
 
 <div id="site-footer"></div>
 
-<script src="partials.js" defer></script>
+<script src="partials.js?v=2" defer></script>
 </body>
 </html>

@@ -138,6 +138,18 @@
     }
   });
 
+  // Close mobile takeover menu when a real link is tapped
+  // (without this, same-page anchors like "Follow Us" change the hash
+  //  but the full-screen overlay stays up, so nothing appears to happen)
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('.nav__links a');
+    if (link) {
+      const nav = document.querySelector('.nav');
+      if (nav) nav.classList.remove('open');
+      document.querySelectorAll('.nav__dropdown-wrap.open').forEach(w => w.classList.remove('open'));
+    }
+  });
+
   // Navbar scroll shrink — always solid on non-home pages
   const navEl = document.querySelector('.nav');
   if (navEl) {

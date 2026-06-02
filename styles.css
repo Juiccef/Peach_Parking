@@ -228,8 +228,12 @@ a  { color: inherit; text-decoration: none; }
   position: absolute; inset: 0;
 }
 .hero__bg img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 70%;
+  width: 100%; height: 100%; object-fit: cover; object-position: 62% 70%;
   animation: heroZoom 14s ease-out forwards;
+}
+/* Desktop: reveal more above the team so heads aren't cut off */
+@media (min-width: 901px) {
+  .hero__bg img { object-position: center 48%; }
 }
 @keyframes heroZoom { from { transform: scale(1.06); } to { transform: scale(1); } }
 .hero__overlay {
@@ -286,10 +290,17 @@ a  { color: inherit; text-decoration: none; }
   color: var(--muted);
 }
 .partners__logos {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; gap: 28px 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; align-items: center;
+  width: 100%; max-width: 860px; margin-inline: auto;
+  gap: 40px 48px;
 }
+.partners__cortland {
+  display: flex; justify-content: center; width: 100%;
+  margin-top: 4px;
+}
+.partners__cortland .partners__logo-wrap img { height: 58px; }
 .partners__logo-wrap {
   display: flex; align-items: center; justify-content: center;
   opacity: .85; transition: opacity .2s;
@@ -362,7 +373,7 @@ a  { color: inherit; text-decoration: none; }
 
 /* ── SERVICES (three-column editorial) ── */
 .services {
-  padding: clamp(40px, 5vw, 64px) 0 clamp(64px, 8vw, 120px);
+  padding: clamp(40px, 5vw, 64px) 0 clamp(32px, 4vw, 56px);
   background: var(--white);
 }
 .service-cols {
@@ -409,6 +420,17 @@ a  { color: inherit; text-decoration: none; }
   line-height: 1.75;
   margin-bottom: 28px;
 }
+.service-col__media {
+  width: 100%; aspect-ratio: 1/1; overflow: hidden;
+  border-radius: var(--r); margin-bottom: 28px;
+}
+.service-col__media img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.service-col:hover .service-col__media img { transform: scale(1.05); }
+.service-col:first-child .service-col__media img { transform: scale(1.18); transform-origin: 78% center; }
+.service-col:first-child:hover .service-col__media img { transform: scale(1.24); transform-origin: 78% center; }
 .service-col__link {
   align-self: flex-start;
   position: relative;
@@ -482,7 +504,7 @@ a  { color: inherit; text-decoration: none; }
 .collage__item--c img { object-position: center 20%; }
 .collage__item--d img { object-position: center 40%; }
 .collage__item--e img { object-position: center 60%; }
-.collage__item--f img { object-position: center 30%; }
+.collage__item--f img { object-position: right 40%; }
 .collage__item img.img-in { opacity: 1; transform: scale(1); }
 .collage__item:hover img { transform: scale(1.04); }
 
@@ -721,6 +743,32 @@ a  { color: inherit; text-decoration: none; }
 }
 .about__media img.img-in { opacity: 1; transform: scale(1); }
 .about__copy .section-head__eyebrow { color: var(--peach); }
+
+/* Instagram link overlay on about photo */
+.about__ig {
+  position: relative; display: block;
+  border-radius: var(--r); overflow: hidden;
+}
+.about__ig::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 40%);
+  opacity: 0; transition: opacity .3s ease;
+  pointer-events: none;
+}
+.about__ig:hover::after { opacity: 1; }
+.about__ig-badge {
+  position: absolute; left: 16px; bottom: 16px; z-index: 2;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 9px 14px; border-radius: 50px;
+  background: rgba(0,0,0,.55); backdrop-filter: blur(6px);
+  color: #fff; font-size: 13px; font-weight: 600; letter-spacing: .01em;
+  transform: translateY(6px); opacity: .92;
+  transition: transform .3s ease, opacity .3s ease, background .3s ease;
+}
+.about__ig:hover .about__ig-badge {
+  transform: translateY(0); opacity: 1;
+  background: linear-gradient(135deg, #f9ce34, #ee2a7b 50%, #6228d7);
+}
 .about__copy h2 {
   font-family: var(--font-display); font-weight: 300;
   font-size: clamp(34px, 5vw, 58px); line-height: 1.05; letter-spacing: -.02em;
@@ -1006,6 +1054,13 @@ a  { color: inherit; text-decoration: none; }
   transition: opacity 1s ease, transform 1.2s cubic-bezier(.2,.7,.2,1);
 }
 .two-col__media img.img-in { opacity: 1; transform: scale(1); }
+.two-col__video {
+  display: block; margin-inline: auto;
+  height: clamp(420px, 62vh, 620px); width: auto; max-width: 100%;
+  aspect-ratio: 9 / 16; object-fit: cover;
+  border-radius: var(--r); background: #000;
+  box-shadow: 0 18px 48px rgba(0,0,0,.22);
+}
 
 .two-col__copy h2 {
   font-family: var(--font-display); font-weight: 400;
@@ -1190,6 +1245,28 @@ a  { color: inherit; text-decoration: none; }
     border-bottom: none;
     color: var(--ink-2);
   }
+  /* Keep tapped/selected menu items dark + bold (never white) */
+  .nav.open .nav__links a:hover,
+  .nav.open .nav__links a:focus,
+  .nav.open .nav__links a:active,
+  .nav.open .nav__links a.is-active,
+  .nav.open .nav__dropdown-trigger:hover,
+  .nav.open .nav__dropdown-trigger:focus,
+  .nav.open .nav__dropdown-trigger:active,
+  .nav.open .nav__dropdown-trigger.is-active,
+  .nav.open .nav__dropdown-wrap:hover .nav__dropdown-trigger,
+  .nav.open .nav__dropdown-wrap.open .nav__dropdown-trigger {
+    color: var(--ink);
+    font-weight: 700;
+    background: transparent;
+  }
+  .nav.open .nav__dropdown li a:hover,
+  .nav.open .nav__dropdown li a:focus,
+  .nav.open .nav__dropdown li a:active {
+    color: var(--ink);
+    font-weight: 700;
+    background: transparent;
+  }
   .about__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
   .footer__nav { margin-left: 0; }
@@ -1216,6 +1293,7 @@ a  { color: inherit; text-decoration: none; }
   .partners__logo-wrap img[alt="Tabla"] { height: 50px; }
   .partners__logo-wrap img[alt="Emory University"] { height: 32px; }
   .partners__logo-wrap img[alt="Terminus Commercial Real Estate Partners"] { height: 40px; }
+  .partners__cortland .partners__logo-wrap img { height: 40px; }
 }
 
 @media (max-width: 600px) {
