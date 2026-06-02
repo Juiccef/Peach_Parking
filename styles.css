@@ -229,7 +229,7 @@ a  { color: inherit; text-decoration: none; }
 }
 .hero__bg img {
   width: 100%; height: 100%; object-fit: cover; object-position: 46% 70%;
-  transform: rotate(-1deg) scale(1.04);
+  transform: rotate(-4deg) scale(1.08);
   transform-origin: center center;
   animation: heroZoom 14s ease-out forwards;
 }
