@@ -830,10 +830,11 @@ a  { color: inherit; text-decoration: none; }
 .featured-on__still img {
   width: 100%; height: 100%; object-fit: cover;
   object-position: center 90%;
+  transform: scale(1.12);
   transition: transform .4s ease;
 }
 .featured-on__still--wide img { object-position: center 90%; }
-.featured-on__still:hover img { transform: scale(1.04); }
+.featured-on__still:hover img { transform: scale(1.17); }
 
 @media (max-width: 600px) {
   .featured-on__stills { grid-template-columns: 1fr; }
