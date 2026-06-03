@@ -738,6 +738,8 @@ a  { color: inherit; text-decoration: none; }
   display: grid; grid-template-columns: 1fr 1fr;
   gap: clamp(32px, 6vw, 80px); align-items: center;
 }
+.about__media--ig { display: flex; align-items: center; justify-content: center; }
+.about__media--ig .instagram-media { border-radius: var(--r) !important; width: 100% !important; }
 .about__media img {
   width: 100%; aspect-ratio: 4/5; object-fit: cover;
   border-radius: var(--r);
