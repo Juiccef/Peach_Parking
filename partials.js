@@ -82,6 +82,7 @@
       <span>© <span id="yr"></span> Peach Parking Solutions.</span>
     </div>
   </div>
+  <img src="${pfx}logos/Untitled design.PNG" alt="" class="footer__egg" aria-hidden="true" />
 </footer>`;
 
   // Inject
