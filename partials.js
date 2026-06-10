@@ -33,6 +33,7 @@
         <li><a href="${pfx}services/valet-service.html" role="menuitem">Valet Service</a></li>
         <li><a href="${pfx}services/parking-management.html" role="menuitem">Parking Management</a></li>
         <li><a href="${pfx}services/event-parking.html" role="menuitem">Event Parking</a></li>
+        <li><a href="${pfx}index.html#film-production" role="menuitem">Film &amp; TV Production</a></li>
       </ul>
     </div>
     <a href="${pfx}about.html"${activePage==='about'?' class="is-active"':''}>About</a>
@@ -150,6 +151,22 @@
       document.querySelectorAll('.nav__dropdown-wrap.open').forEach(w => w.classList.remove('open'));
     }
   });
+
+  // Hash anchor re-scroll — waits for full page load (including Instagram embed)
+  // before calculating position, so the layout is fully settled
+  if (location.hash) {
+    const id = location.hash.slice(1);
+    const rescroll = () => {
+      const el = document.getElementById(id);
+      if (el) {
+        const navHeight = (document.querySelector('.nav') || {}).offsetHeight || 70;
+        const y = el.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    };
+    // window.load fires after all subresources (images, embeds) are done
+    window.addEventListener('load', () => setTimeout(rescroll, 300));
+  }
 
   // Navbar scroll shrink — always solid on non-home pages
   const navEl = document.querySelector('.nav');
