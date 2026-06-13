@@ -360,15 +360,15 @@ a  { color: inherit; text-decoration: none; }
 .peach-values__list {
   list-style: none;
   display: flex; flex-direction: row;
-  justify-content: space-between; align-items: baseline;
-  gap: 0;
-  flex-wrap: nowrap;
+  justify-content: center; align-items: baseline;
+  gap: clamp(12px, 3vw, 24px);
+  flex-wrap: wrap;
   width: 100%;
 }
 .peach-values__item {
   display: inline-flex; flex-direction: row; align-items: baseline;
   gap: 1px;
-  padding: 10px 0;
+  padding: 6px 0;
   font-family: 'Gravesend Sans', var(--font-display);
   line-height: 1;
   transition-delay: calc(var(--i, 0) * 120ms) !important;
@@ -388,6 +388,13 @@ a  { color: inherit; text-decoration: none; }
   font-weight: 300;
   letter-spacing: -.015em;
   line-height: 1;
+}
+@media (min-width: 900px) {
+  .peach-values__list {
+    justify-content: space-between;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
 }
 
 /* ── SERVICES (three-column editorial) ── */
