@@ -1017,7 +1017,7 @@ a  { color: inherit; text-decoration: none; }
   100% { transform: translateY(0); }
 }
 @media (max-width: 768px) {
-  .footer__egg { width: 78px; bottom: 54px; right: 12px; }
+  .footer__egg { width: 78px; bottom: 56px; right: 12px; }
 }
 .footer__inner {
   display: flex; flex-wrap: wrap; gap: 28px 48px;
