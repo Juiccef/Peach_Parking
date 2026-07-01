@@ -64,7 +64,7 @@
     </div>
     <nav class="footer__nav" aria-label="Footer navigation">
       <a href="${pfx}index.html">Home</a>
-      <a href="${pfx}index.html#services">Services</a>
+      <a href="${pfx}services/valet-service.html">Services</a>
       <a href="${pfx}about.html">About</a>
       <a href="${pfx}index.html#contact">Contact</a>
     </nav>
