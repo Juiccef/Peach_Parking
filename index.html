@@ -209,21 +209,24 @@
       </div>
 
       <form class="contact__form reveal" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="subject" value="New Contact Inquiry — Peach Parking" />
+        <input type="hidden" name="from_name" value="Peach Parking Website" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="field">
           <label for="cf-name">Name</label>
-          <input id="cf-name" type="text" required placeholder="Your name" />
+          <input id="cf-name" name="name" type="text" required placeholder="Your name" />
         </div>
         <div class="field">
           <label for="cf-email">Email</label>
-          <input id="cf-email" type="email" required placeholder="your@email.com" />
+          <input id="cf-email" name="email" type="email" required placeholder="your@email.com" />
         </div>
         <div class="field">
           <label for="cf-phone">Phone <span class="field__optional">(optional)</span></label>
-          <input id="cf-phone" type="tel" placeholder="(404) 555-0100" />
+          <input id="cf-phone" name="phone" type="tel" placeholder="(404) 555-0100" />
         </div>
         <div class="field">
           <label for="cf-service">Service Needed</label>
-          <select id="cf-service">
+          <select id="cf-service" name="service">
             <option value="">Select a service…</option>
             <option>Valet Service</option>
             <option>Parking Management</option>
@@ -234,7 +237,7 @@
         </div>
         <div class="field">
           <label for="cf-message">Message</label>
-          <textarea id="cf-message" rows="4" placeholder="Tell us about your event or parking needs…"></textarea>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your event or parking needs…"></textarea>
         </div>
         <button class="btn btn--peach btn--lg" type="submit">Send Message</button>
         <p class="form__status" role="status" aria-live="polite"></p>
@@ -246,6 +249,6 @@
 
 <div id="site-footer"></div>
 
-<script src="partials.js?v=6" defer></script>
+<script src="partials.js?v=8" defer></script>
 </body>
 </html>

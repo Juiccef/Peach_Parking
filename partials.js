@@ -12,6 +12,7 @@
   const activePage = (() => {
     if (path.endsWith('/about.html')) return 'about';
     if (/\/services\/file-a-claim\.html$/.test(path)) return 'contact';
+    if (/\/services\/join-our-team\.html$/.test(path)) return 'contact';
     if (/\/services\//.test(path)) return 'services';
     if (path === '/' || path.endsWith('/index.html') || path === '') return 'home';
     return '';
@@ -43,6 +44,7 @@
       </button>
       <ul class="nav__dropdown" role="menu">
         <li><a href="${pfx}index.html#contact" role="menuitem">Get in Touch</a></li>
+        <li><a href="${pfx}services/join-our-team.html" role="menuitem">Join Our Team</a></li>
         <li><a href="${pfx}services/file-a-claim.html" role="menuitem">File a Claim</a></li>
         <li><a href="${pfx}index.html#stay-in-touch" role="menuitem">Follow Us</a></li>
       </ul>
@@ -193,9 +195,30 @@
     });
   });
 
-  // Global handleSubmit
+  // Global handleSubmit — posts to Web3Forms so every form emails help@peachparkingsolutions.com
   window.handleSubmit = function (e) {
     e.preventDefault();
-    e.target.querySelector('.form__status').textContent = "Thanks! We'll be in touch soon.";
+    const form = e.target;
+    const status = form.querySelector('.form__status');
+    const btn = form.querySelector('button[type="submit"]');
+    const data = new FormData(form);
+    data.append('access_key', '75bbc66e-6dd1-4675-8b30-671e447820cd');
+    if (status) status.textContent = 'Sending…';
+    if (btn) btn.disabled = true;
+
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      .then(async (res) => {
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && json.success) {
+          if (status) status.textContent = "Thanks! We'll be in touch soon.";
+          form.reset();
+        } else {
+          if (status) status.textContent = (json && json.message) || 'Something went wrong. Please try again or email help@peachparkingsolutions.com.';
+        }
+      })
+      .catch(() => {
+        if (status) status.textContent = 'Network error. Please try again or email help@peachparkingsolutions.com.';
+      })
+      .finally(() => { if (btn) btn.disabled = false; });
   };
 })();

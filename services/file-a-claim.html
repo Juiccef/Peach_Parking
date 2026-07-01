@@ -37,42 +37,45 @@
       </div>
 
       <form class="contact__form reveal" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="subject" value="New Claim Submission — Peach Parking" />
+        <input type="hidden" name="from_name" value="Peach Parking Website" />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="field">
           <label for="claim-name">Name</label>
-          <input id="claim-name" type="text" required placeholder="Your full name" />
+          <input id="claim-name" name="name" type="text" required placeholder="Your full name" />
         </div>
         <div class="field">
           <label for="claim-email">Email</label>
-          <input id="claim-email" type="email" required placeholder="your@email.com" />
+          <input id="claim-email" name="email" type="email" required placeholder="your@email.com" />
         </div>
         <div class="field">
           <label for="claim-phone">Phone <span class="field__optional">(optional)</span></label>
-          <input id="claim-phone" type="tel" placeholder="(404) 555-0100" />
+          <input id="claim-phone" name="phone" type="tel" placeholder="(404) 555-0100" />
         </div>
         <div class="field">
           <label for="claim-date">Date of Incident</label>
-          <input id="claim-date" type="date" required />
+          <input id="claim-date" name="date_of_incident" type="date" required />
         </div>
         <div class="field">
           <label for="claim-location">Location (venue or address)</label>
-          <input id="claim-location" type="text" required placeholder="Restaurant, venue, or property name" />
+          <input id="claim-location" name="location" type="text" required placeholder="Restaurant, venue, or property name" />
         </div>
         <div class="field">
           <label for="claim-vehicle">Vehicle Make &amp; Model</label>
-          <input id="claim-vehicle" type="text" required placeholder="e.g. 2021 Honda Accord" />
+          <input id="claim-vehicle" name="vehicle" type="text" required placeholder="e.g. 2021 Honda Accord" />
         </div>
         <div class="field">
           <label for="claim-plate">License Plate <span class="field__optional">(optional)</span></label>
-          <input id="claim-plate" type="text" placeholder="ABC-1234" />
+          <input id="claim-plate" name="license_plate" type="text" placeholder="ABC-1234" />
         </div>
         <div class="field">
           <label for="claim-details">Describe what happened</label>
-          <textarea id="claim-details" rows="5" required placeholder="Please include as much detail as possible: time of incident, where the damage occurred, and the nature of the issue."></textarea>
+          <textarea id="claim-details" name="details" rows="5" required placeholder="Please include as much detail as possible: time of incident, where the damage occurred, and the nature of the issue."></textarea>
         </div>
         <div class="field">
           <label for="claim-photos">Photos</label>
           <label class="file-drop" id="claim-photos-label">
-            <input id="claim-photos" type="file" accept="image/*" multiple required />
+            <input id="claim-photos" name="attachment" type="file" accept="image/*" multiple required />
             <span class="file-drop__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             </span>
@@ -101,7 +104,7 @@
 </section>
 
 <div id="site-footer"></div>
-<script src="../partials.js?v=6" defer></script>
+<script src="../partials.js?v=8" defer></script>
 <script>
 (function () {
   const input = document.getElementById('claim-photos');
