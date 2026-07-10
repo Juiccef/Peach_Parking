@@ -81,8 +81,12 @@
     </address>
   </div>
   <div class="footer__bottom">
-    <div class="container">
+    <div class="container footer__bottom-inner">
       <span>© <span id="yr"></span> Peach Parking Solutions.</span>
+      <nav class="footer__legal" aria-label="Legal">
+        <a href="${pfx}privacy-policy.html">Privacy Policy</a>
+        <a href="${pfx}terms-and-conditions.html">Terms &amp; Conditions</a>
+      </nav>
     </div>
   </div>
   <img src="${pfx}logos/easter-egg.png?v=2" alt="" class="footer__egg" aria-hidden="true" />
