@@ -77,7 +77,8 @@
       </a>
     </div>
     <address class="footer__address">
-      P.O. Box 620767 · Atlanta, GA 30362
+      P.O. Box 620767 · Atlanta, GA 30362<br/>
+      <a href="tel:+14043452080">(404) 345-2080</a> · <a href="mailto:help@peachparkingsolutions.com">help@peachparkingsolutions.com</a>
     </address>
   </div>
   <div class="footer__bottom">

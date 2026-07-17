@@ -923,6 +923,8 @@ a  { color: inherit; text-decoration: none; }
 .contact__info p { color: var(--ink-2); font-size: 16px; margin-bottom: 24px; }
 .contact__address { font-style: normal; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--rule); }
 .contact__address p { font-family: var(--font-display); font-size: 22px; font-weight: 400; color: var(--ink); margin: 0; line-height: 1.4; }
+.contact__address p + p { margin-top: 10px; }
+.contact__address a:hover { color: var(--peach); }
 
 .contact__form {
   background: var(--cream); border: 1px solid var(--rule);
@@ -1040,7 +1042,9 @@ a  { color: inherit; text-decoration: none; }
   color: #fff; border-color: var(--peach); background: rgba(242,149,106,.14);
   transform: translateY(-1px);
 }
-.footer__address { font-size: 14px; font-style: normal; width: 100%; }
+.footer__address { font-size: 14px; font-style: normal; width: 100%; line-height: 1.6; }
+.footer__address a { transition: color .2s; }
+.footer__address a:hover { color: var(--peach); }
 .footer__bottom {
   padding: 18px 0;
   font-size: 12px; letter-spacing: .04em;
